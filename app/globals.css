@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: var(--font-playfair), "Times New Roman", serif;
+  --font-sans: var(--font-dm), "Segoe UI", sans-serif;
+
+  --color-rayco-950: #041411;
+  --color-rayco-900: #0a241e;
+  --color-rayco-800: #12362c;
+  --color-rayco-700: #1a4a3c;
+  --color-rayco-600: #22604d;
+  --color-gold: #c9a227;
+  --color-gold-light: #e0c56a;
+  --color-gold-dark: #a88732;
+  --color-cream: #f4f2eb;
+  --color-cream-dark: #e7e2d4;
+  --color-ink: #141414;
+  --color-muted: #5a5a5a;
+  --color-line: #e3ded2;
+
+  --shadow-card: 0 18px 40px -24px rgb(10 36 30 / 0.28);
+  --shadow-lift: 0 28px 50px -20px rgb(10 36 30 / 0.35);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #12362c;
+  color: #f4f2eb;
+}
+
+h1,
+h2,
+h3,
+.font-serif {
+  font-family: var(--font-serif);
+  letter-spacing: -0.02em;
+}
+
+.container-rayco {
+  width: min(1180px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+@media (min-width: 1280px) {
+  .container-rayco {
+    width: min(1240px, calc(100% - 3rem));
+  }
+}
+
+.gold-rule {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-gold), transparent);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold-dark);
+}
+
+.eyebrow::before {
+  content: "";
+  width: 1.5rem;
+  height: 1px;
+  background: currentColor;
+}
+
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.img-cover {
+  object-fit: cover;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
